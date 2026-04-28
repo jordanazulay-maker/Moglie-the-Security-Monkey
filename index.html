@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Access Denied</title>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <style>
         body {
             background-color: #f4f4f9;
@@ -21,6 +22,7 @@
         }
         .container {
             padding-top: 100px;
+            z-index: 20; /* Ensure it stays above the monkey */
         }
         h1 {
             font-size: 3rem;
@@ -30,8 +32,13 @@
             font-size: 1.5rem;
             color: #666;
         }
+        /* 2. Added styling for the captcha container */
+        .captcha-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
         .monkey-bottom {
-            /* Increased width from 150px to 250px */
             width: 250px; 
             height: auto;
             position: absolute;
@@ -52,11 +59,12 @@
     <div class="container">
         <h1>403 - Forbidden</h1>
         <p>Sorry, you're not allowed here!</p>
+        
+        <div class="captcha-container">
+            <div class="cf-turnstile" data-sitekey="YOUR_SITE_KEY_HERE"></div>
+        </div>
     </div>
 
     <div class="monkey-bottom">
         <img src="monkey.png" alt="Monkey Mascot">
     </div>
-
-</body>
-</html>
