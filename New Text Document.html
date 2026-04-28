@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Denied</title>
+    <style>
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; 
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            position: relative; 
+            overflow: hidden; 
+        }
+        .container {
+            padding-top: 100px;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.5rem;
+            color: #666;
+        }
+        .monkey-bottom {
+            /* Increased width from 150px to 250px */
+            width: 250px; 
+            height: auto;
+            position: absolute;
+            bottom: 0; 
+            left: 50%;
+            transform: translateX(-50%); 
+            z-index: 10;
+        }
+        .monkey-bottom img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>403 - Forbidden</h1>
+        <p>Sorry, you're not allowed here!</p>
+    </div>
+
+    <div class="monkey-bottom">
+        <img src="monkey.png" alt="Monkey Mascot">
+    </div>
+
+</body>
+</html>
