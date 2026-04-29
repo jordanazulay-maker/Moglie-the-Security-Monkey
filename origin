@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Down</title>
+    <style>
+        /* Modern reset and styling to match your GitHub design */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #333;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #d9534f; /* Error Red */
+        }
+
+        p {
+            font-size: 1.25rem;
+            color: #6c757d;
+            margin-bottom: 30px;
+        }
+
+        .mascot {
+            width: 250px;
+            height: auto;
+            /* Simple hover animation for a bit of polish */
+            transition: transform 0.3s ease;
+        }
+
+        .mascot:hover {
+            transform: scale(1.05);
+        }
+
+        .error-code {
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #adb5bd;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <p>Access Denied</p>
+        <hr style="border: 0; height: 1px; background: #eee; margin: 20px 0;">
+        <h1>Origin DNS Error</h1>
+        <p>Sorry, the server is not reachable at the moment.</p>
+        
+        <img src="https://jordanazulay-maker.github.io/errorpage/monkey.png" 
+             alt="Monkey Mascot" 
+             class="mascot">
+
+        <div class="error-code">
+            Cloudflare Event ID: ::RAY_ID:: • Status: 1xxx
+        ::CLOUDFLARE_ERROR_1000S_BOX::
+        </div>
+    </div>
+
+</body>
+</html>
