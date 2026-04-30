@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Server Down</title>
     <style>
-        /* Modern reset and styling to match your GitHub design */
+        /* Modern reset and styling */
         body {
             margin: 0;
             padding: 0;
@@ -36,11 +36,52 @@
             margin-bottom: 30px;
         }
 
+        /* --- Speech Bubble Styles --- */
+        .speech-bubble {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 15px 25px;
+            position: relative;
+            margin: 0 auto 25px auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333;
+            border: 2px solid #000;
+            display: inline-block;
+            max-width: 80%;
+        }
+
+        /* The Triangle Tail */
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 15px 15px 0;
+            border-style: solid;
+            border-color: #ffffff transparent transparent;
+        }
+        
+        /* The Tail Outline */
+        .speech-bubble::before {
+            content: '';
+            position: absolute;
+            bottom: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 17px 17px 0;
+            border-style: solid;
+            border-color: #000 transparent transparent;
+        }
+
         .mascot {
             width: 250px;
             height: auto;
-            /* Simple hover animation for a bit of polish */
             transition: transform 0.3s ease;
+            display: block;
+            margin: 0 auto;
         }
 
         .mascot:hover {
@@ -64,13 +105,20 @@
         <h1>Origin DNS Error</h1>
         <p>Sorry, the server is not reachable at the moment.</p>
         
-        <img src="https://jordanazulay-maker.github.io/errorpage/monkey.svg" 
-             alt="Monkey Mascot" 
-             class="mascot">
+        <!-- Speech Bubble Container -->
+        <div>
+            <div class="speech-bubble">
+                Our top primate is peeling back the layers of this monkey business. Thanks for your patience while we banana split this problem!
+            </div>
+            
+            <img src="https://jordanazulay-maker.github.io/errorpage/monkey.svg" 
+                 alt="Monkey Mascot" 
+                 class="mascot">
+        </div>
 
         <div class="error-code">
             Cloudflare Event ID: ::RAY_ID:: • Status: 1xxx
-        ::CLOUDFLARE_ERROR_1000S_BOX::
+            ::CLOUDFLARE_ERROR_1000S_BOX::
         </div>
     </div>
 
