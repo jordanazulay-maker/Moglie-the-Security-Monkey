@@ -3,7 +3,7 @@
 <table>
   <tr>
     <td align="center">
-      <b>Looks like this primate doesn't think you have clearance to pass. <br> Slip this monkey a secret banana for access.</b>
+      <b>Hi there!</b><br>I'm Mogei. The security primate!</b>
     </td>
   </tr>
 </table>
