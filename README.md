@@ -1,10 +1,12 @@
 <div align="center">
 
-<fieldset>
-  <blockquote style="border: none; margin: 0; padding: 10px;">
-    <strong>Looks like this primate doesn't think you have clearance to pass. Slip this monkey a secret banana for access.</strong>
-  </blockquote>
-</fieldset>
+<table>
+  <tr>
+    <td align="center">
+      <b>Looks like this primate doesn't think you have clearance to pass. <br> Slip this monkey a secret banana for access.</b>
+    </td>
+  </tr>
+</table>
 
 <br>
 
