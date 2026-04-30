@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Access Denied</title>
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <style>
         body {
             background-color: #f4f4f9;
@@ -20,33 +19,63 @@
             position: relative; 
             overflow: hidden; 
         }
+
         .container {
-            padding-top: 100px;
-            z-index: 20; /* Ensure it stays above the monkey */
+            padding-top: 120px;
+            z-index: 20; 
         }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
+
+        h1 { font-size: 3.5rem; margin-bottom: 10px; }
+        p { font-size: 1.8rem; color: #666; }
+
+        /* The Bubble Box */
+        .speech-bubble {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 15px 25px;
+            position: relative;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+            border: 2px solid #000;
+            display: inline-block;
         }
-        p {
-            font-size: 1.5rem;
-            color: #666;
-        }
-        /* 2. Added styling for the captcha container */
-        .captcha-container {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-        }
-        .monkey-bottom {
-            width: 250px; 
-            height: auto;
+
+        /* The Triangle Tail */
+        .speech-bubble::after {
+            content: '';
             position: absolute;
-            bottom: 0; 
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 15px 15px 0;
+            border-style: solid;
+            border-color: #ffffff transparent transparent;
+        }
+        
+        /* The Tail Outline */
+        .speech-bubble::before {
+            content: '';
+            position: absolute;
+            bottom: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 17px 17px 0;
+            border-style: solid;
+            border-color: #000 transparent transparent;
+        }
+
+        .monkey-bottom {
+            width: 300px; 
+            position: absolute;
+            bottom: -10px; 
             left: 50%;
             transform: translateX(-50%); 
             z-index: 10;
         }
+
         .monkey-bottom img {
             width: 100%;
             height: auto;
@@ -59,10 +88,12 @@
     <div class="container">
         <h1>403 - Forbidden</h1>
         <p>Sorry, you're not allowed here!</p>
-
-        </div>
     </div>
 
     <div class="monkey-bottom">
+        <div class="speech-bubble">Looks like this primate doesn't think you have clearance to pass. Slip this monkey a secret banana for access.</div>
         <img src="monkey.svg" alt="Monkey Mascot">
     </div>
+
+</body>
+</html>
