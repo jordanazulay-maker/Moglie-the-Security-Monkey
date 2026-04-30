@@ -3,75 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Server Down</title>
+    <title>Access Denied</title>
     <style>
-        /* Modern reset and styling to match your GitHub design */
         body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f8f9fa;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f4f9;
             color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Changed to min-height so short screens don't crush the layout */
+            min-height: 100vh;
+            margin: 0;
             text-align: center;
+            /* Changed to only hide horizontal overflow */
+            overflow-x: hidden; 
         }
 
         .container {
-            max-width: 600px;
-            padding: 20px;
+            /* flex: 1 forces this container to take up all empty vertical space, pushing the monkey down */
+            flex: 1; 
+            padding-top: 10vh; /* Using vh instead of px so it scales better on mobile */
+            z-index: 20; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            color: #d9534f; /* Error Red */
+        h1 { font-size: 3.5rem; margin-bottom: 10px; }
+        p { font-size: 1.8rem; color: #666; }
+
+        /* The Bubble Box */
+        .speech-bubble {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 15px 25px;
+            position: relative;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+            border: 2px solid #000;
+            display: inline-block;
+            max-width: 90%; /* Prevents the bubble from touching screen edges */
         }
 
-        p {
-            font-size: 1.25rem;
-            color: #6c757d;
-            margin-bottom: 30px;
+        /* The Triangle Tail */
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 15px 15px 0;
+            border-style: solid;
+            border-color: #ffffff transparent transparent;
+        }
+        
+        /* The Tail Outline */
+        .speech-bubble::before {
+            content: '';
+            position: absolute;
+            bottom: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 17px 17px 0;
+            border-style: solid;
+            border-color: #000 transparent transparent;
         }
 
-        .mascot {
-            width: 250px;
+        .monkey-bottom {
+            width: 300px; 
+            max-width: 100%;
+            /* Removed absolute positioning. margin-top: auto anchors it to the bottom safely */
+            margin-top: auto; 
+            z-index: 10;
+        }
+
+        .monkey-bottom img {
+            width: 100%;
             height: auto;
-            /* Simple hover animation for a bit of polish */
-            transition: transform 0.3s ease;
+            display: block;
         }
 
-        .mascot:hover {
-            transform: scale(1.05);
-        }
-
-        .error-code {
-            margin-top: 40px;
-            font-size: 0.8rem;
-            color: #adb5bd;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        /* Mobile scaling to ensure the giant text doesn't break small phones */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            p { font-size: 1.2rem; }
+            .speech-bubble { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <p>Access Denied</p>
-        <hr style="border: 0; height: 1px; background: #eee; margin: 20px 0;">
         <h1>Server Down</h1>
-        <p>Sorry, the server is not reachable at the moment.</p>
-        
-        <img src="https://jordanazulay-maker.github.io/errorpage/monkey.svg" 
-             alt="Monkey Mascot" 
-             class="mascot">
+		
+    </div>
 
-        <div class="error-code">
-            Cloudflare Event ID: ::RAY_ID:: • Status: 5xx
-        ::CLOUDFLARE_ERROR_500S_BOX::
-        </div>
+    <div class="monkey-bottom">
+        <div class="speech-bubble">This primate can't even find his way home. Can you spare a banana? I've been lost for days!</div>
+        <img src="monkey.svg" alt="Monkey Mascot">
     </div>
 
 </body>
