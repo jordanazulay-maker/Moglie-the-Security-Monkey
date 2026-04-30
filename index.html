@@ -12,17 +12,22 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start; 
-            height: 100vh;
+            /* Changed to min-height so short screens don't crush the layout */
+            min-height: 100vh;
             margin: 0;
             text-align: center;
-            position: relative; 
-            overflow: hidden; 
+            /* Changed to only hide horizontal overflow */
+            overflow-x: hidden; 
         }
 
         .container {
-            padding-top: 120px;
+            /* flex: 1 forces this container to take up all empty vertical space, pushing the monkey down */
+            flex: 1; 
+            padding-top: 10vh; /* Using vh instead of px so it scales better on mobile */
             z-index: 20; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         h1 { font-size: 3.5rem; margin-bottom: 10px; }
@@ -41,6 +46,7 @@
             color: #333;
             border: 2px solid #000;
             display: inline-block;
+            max-width: 90%; /* Prevents the bubble from touching screen edges */
         }
 
         /* The Triangle Tail */
@@ -69,10 +75,9 @@
 
         .monkey-bottom {
             width: 300px; 
-            position: absolute;
-            bottom: -10px; 
-            left: 50%;
-            transform: translateX(-50%); 
+            max-width: 100%;
+            /* Removed absolute positioning. margin-top: auto anchors it to the bottom safely */
+            margin-top: auto; 
             z-index: 10;
         }
 
@@ -80,6 +85,13 @@
             width: 100%;
             height: auto;
             display: block;
+        }
+
+        /* Mobile scaling to ensure the giant text doesn't break small phones */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            p { font-size: 1.2rem; }
+            .speech-bubble { font-size: 1rem; }
         }
     </style>
 </head>
