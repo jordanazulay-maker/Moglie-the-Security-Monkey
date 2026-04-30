@@ -3,7 +3,7 @@
 <table>
   <tr>
     <td align="center">
-      <b>Hi there!</b><br>I'm Mogei. The security primate!</b><br>I am designed to help protect</b><br>most Cloudflare websites.</b><br>This primate is known to be weak for a banana though...</b>
+      <b>Hi there!</b><br>I'm Mogei. The security primate!</b><br>I am designed to help protect</b><br>most Cloudflare websites.</b><br>This primate is known to be</b><br> weak for a banana though...</b>
     </td>
   </tr>
 </table>
