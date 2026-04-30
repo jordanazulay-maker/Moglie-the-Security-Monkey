@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Access Denied</title>
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+	<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <style>
         body {
             background-color: #f4f4f9;
@@ -13,56 +13,100 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start; 
-            height: 100vh;
+            /* Changed to min-height so short screens don't crush the layout */
+            min-height: 100vh;
             margin: 0;
             text-align: center;
-            position: relative; 
-            overflow: hidden; 
+            /* Changed to only hide horizontal overflow */
+            overflow-x: hidden; 
         }
+
         .container {
-            padding-top: 100px;
-            z-index: 20; /* Ensure it stays above the monkey */
-        }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 1.5rem;
-            color: #666;
-        }
-        /* 2. Added styling for the captcha container */
-        .captcha-container {
-            margin-top: 20px;
+            /* flex: 1 forces this container to take up all empty vertical space, pushing the monkey down */
+            flex: 1; 
+            padding-top: 10vh; /* Using vh instead of px so it scales better on mobile */
+            z-index: 20; 
             display: flex;
+            flex-direction: column;
             justify-content: center;
         }
-        .monkey-bottom {
-            width: 250px; 
-            height: auto;
+
+        h1 { font-size: 3.5rem; margin-bottom: 10px; }
+        p { font-size: 1.8rem; color: #666; }
+
+        /* The Bubble Box */
+        .speech-bubble {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 15px 25px;
+            position: relative;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+            border: 2px solid #000;
+            display: inline-block;
+            max-width: 90%; /* Prevents the bubble from touching screen edges */
+        }
+
+        /* The Triangle Tail */
+        .speech-bubble::after {
+            content: '';
             position: absolute;
-            bottom: 0; 
+            bottom: -15px;
             left: 50%;
-            transform: translateX(-50%); 
+            transform: translateX(-50%);
+            border-width: 15px 15px 0;
+            border-style: solid;
+            border-color: #ffffff transparent transparent;
+        }
+        
+        /* The Tail Outline */
+        .speech-bubble::before {
+            content: '';
+            position: absolute;
+            bottom: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 17px 17px 0;
+            border-style: solid;
+            border-color: #000 transparent transparent;
+        }
+
+        .monkey-bottom {
+            width: 300px; 
+            max-width: 100%;
+            /* Removed absolute positioning. margin-top: auto anchors it to the bottom safely */
+            margin-top: auto; 
             z-index: 10;
         }
+
         .monkey-bottom img {
             width: 100%;
             height: auto;
             display: block;
+        }
+
+        /* Mobile scaling to ensure the giant text doesn't break small phones */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            p { font-size: 1.2rem; }
+            .speech-bubble { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>429 Too many requests!</h1>
-        <p>You have been blocked.</p>
-
-        </div>
+        <h1>429 - Too meny requests!</h1>
+        <p>Sorry, you're not allowed here!</p>
     </div>
 
     <div class="monkey-bottom">
+        <div class="speech-bubble">Send more bananas! Our chief is buried under requests!</div>
         <img src="monkey.svg" alt="Monkey Mascot">
     </div>
+
+</body>
+</html>
