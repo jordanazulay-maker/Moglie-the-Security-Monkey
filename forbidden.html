@@ -1,1 +1,154 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Access Denied</title> <style> body { background-color: #f4f4f9; color: #333; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; display: flex; flex-direction: column; align-items: center; min-height: 100vh; margin: 0; text-align: center; overflow-x: hidden; } .container { flex: 1; padding-top: 10vh; z-index: 20; display: flex; flex-direction: column; justify-content: center; } h1 { font-size: 3.5rem; margin-bottom: 10px; } p { font-size: 1.8rem; color: #666; } .speech-bubble { background: #ffffff; border-radius: 12px; padding: 15px 25px; position: relative; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); font-size: 1.3rem; font-weight: bold; color: #333; border: 2px solid #000; display: inline-block; max-width: 90%; } .speech-bubble::after, .speech-bubble::before { content: ''; position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); border-style: solid; } .speech-bubble::after { border-width: 15px 15px 0; border-color: #ffffff transparent transparent; z-index: 2; } .speech-bubble::before { bottom: -18px; border-width: 17px 17px 0; border-color: #000 transparent transparent; z-index: 1; } .monkey-container { display: flex; justify-content: center; align-items: flex-end; gap: 50px; /* Adjust this value to move the banana further or closer */ margin-top: auto; margin-bottom: 20px; z-index: 10; padding: 0 20px; } .monkey-wrapper { display: flex; flex-direction: column; align-items: center; } .monkey-bottom { width: 300px; } .monkey-bottom img { width: 100%; height: auto; display: block; } /* Container for Banana + Quote */ .banana-wrapper { display: flex; flex-direction: column; align-items: center; margin-bottom: 40px; /* Lifts banana slightly off the "ground" */ } .banana-button { background: transparent; border: none; cursor: pointer; padding: 0; transition: transform 0.2s; } .banana-button:hover { transform: scale(1.1) rotate(-5deg); } .banana-quote { font-size: 0.9rem; font-style: italic; color: #555; margin-top: 5px; background: rgba(255, 255, 255, 0.7); padding: 2px 8px; border-radius: 5px; white-space: nowrap; pointer-events: none; } @media (max-width: 600px) { h1 { font-size: 2.5rem; } p { font-size: 1.2rem; } .speech-bubble { font-size: 1rem; } .monkey-container { gap: 20px; } .monkey-bottom { width: 200px; } .banana-quote { font-size: 0.7rem; } } </style> </head> <body> <div class="container"> <h1>403 - Forbidden</h1> <p>Sorry, you're not allowed here!</p> </div> <div class="monkey-container"> <!-- Monkey Side --> <div class="monkey-wrapper"> <div class="speech-bubble"> Looks like this primate doesn't think you have clearance to pass. Slip this monkey a secret banana for access. </div> <div class="monkey-bottom"> <img src="monkey.svg" alt="Monkey Mascot"> </div> </div> <!-- Banana Side --> <div class="banana-wrapper"> <button class="banana-button"> <img src="banana.svg" width="100" height="100" class="banana-quote" alt="Slip the monkey a banana!"> </button> </div> </div> </body> </html> 
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Access Denied</title> 
+<style> 
+body { 
+    background-color: #f4f4f9; 
+    color: #333; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    min-height: 100vh; 
+    margin: 0; 
+    text-align: center; 
+    overflow-x: hidden; 
+} 
+.container { 
+    flex: 1; 
+    padding-top: 10vh; 
+    z-index: 20; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+} 
+h1 { 
+    font-size: 3.5rem; 
+    margin-bottom: 10px; 
+} 
+p { 
+    font-size: 1.8rem; 
+    color: #666; 
+} 
+.speech-bubble { 
+    background: #ffffff; 
+    border-radius: 12px; 
+    padding: 15px 25px; 
+    position: relative; 
+    margin-bottom: 25px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+    font-size: 1.3rem; 
+    font-weight: bold; 
+    color: #333; 
+    border: 2px solid #000; 
+    display: inline-block; 
+    max-width: 90%; 
+} 
+.speech-bubble::after, .speech-bubble::before { 
+    content: ''; 
+    position: absolute; 
+    bottom: -15px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    border-style: solid; 
+} 
+.speech-bubble::after { 
+    border-width: 15px 15px 0; 
+    border-color: #ffffff transparent transparent; 
+    z-index: 2; 
+} 
+.speech-bubble::before { 
+    bottom: -18px; 
+    border-width: 17px 17px 0; 
+    border-color: #000 transparent transparent; 
+    z-index: 1; 
+} 
+.monkey-container { 
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-end; 
+    gap: 50px; 
+    margin-top: auto; 
+    margin-bottom: 20px; 
+    z-index: 10; 
+    padding: 0 20px; 
+} 
+.monkey-wrapper { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+} 
+.monkey-bottom { 
+    width: 300px; 
+} 
+.monkey-bottom img { 
+    width: 100%; 
+    height: auto; 
+    display: block; 
+} 
+.banana-wrapper { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    margin-bottom: 40px; 
+} 
+.banana-button { 
+    background: transparent; 
+    border: none; 
+    cursor: pointer; 
+    padding: 0; 
+    transition: transform 0.2s; 
+} 
+.banana-button:hover { 
+    transform: scale(1.1) rotate(-5deg); 
+} 
+.banana-quote { 
+    font-size: 0.9rem; 
+    font-style: italic; 
+    color: #555; 
+    margin-top: 5px; 
+    background: rgba(255, 255, 255, 0.7); 
+    padding: 2px 8px; 
+    border-radius: 5px; 
+    white-space: nowrap; 
+    pointer-events: none; 
+} 
+@media (max-width: 600px) { 
+    h1 { font-size: 2.5rem; } 
+    p { font-size: 1.2rem; } 
+    .speech-bubble { font-size: 1rem; } 
+    .monkey-container { gap: 20px; } 
+    .monkey-bottom { width: 200px; } 
+    .banana-quote { font-size: 0.7rem; } 
+} 
+</style> 
+</head> 
+<body> 
+<div class="container"> 
+    <h1>403 - Forbidden</h1> 
+    <p>Sorry, you're not allowed here!</p> 
+</div> 
+<div class="monkey-container"> 
+    <!-- Monkey Side --> 
+    <div class="monkey-wrapper"> 
+        <div class="speech-bubble"> 
+            Looks like this primate doesn't think you have clearance to pass. Slip this monkey a secret banana for access. 
+        </div> 
+        <div class="monkey-bottom"> 
+            <img src="monkey.svg" alt="Monkey Mascot"> 
+        </div> 
+    </div> 
+    
+    <!-- Banana Side --> 
+    <div class="banana-wrapper"> 
+        <!-- Added onclick handler to reload the page -->
+        <button class="banana-button" onclick="window.location.reload();"> 
+            <img src="banana.svg" width="100" height="100" class="banana-quote" alt="Slip the monkey a banana!"> 
+        </button> 
+    </div> 
+</div> 
+</body> 
+</html>
