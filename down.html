@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Access Denied</title>
+    <title>Server Maintenance</title>
     <style>
         body {
             background-color: #f4f4f9;
@@ -11,29 +11,43 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            /* Changed to min-height so short screens don't crush the layout */
             min-height: 100vh;
             margin: 0;
             text-align: center;
-            /* Changed to only hide horizontal overflow */
-            overflow-x: hidden; 
+            overflow-x: hidden;
         }
 
-        .container {
-            /* flex: 1 forces this container to take up all empty vertical space, pushing the monkey down */
+        .header-container {
+            padding-top: 8vh;
+            z-index: 20;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.8rem;
+            color: #666;
+        }
+
+        .monkey-container {
+            display: flex;
             flex: 1; 
-            padding-top: 10vh; /* Using vh instead of px so it scales better on mobile */
-            z-index: 20; 
+            justify-content: center;
+            align-items: center; 
+            gap: 50px;
+            z-index: 10;
+            padding: 20px;
+        }
+
+        .monkey-wrapper {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            align-items: center;
         }
 
-        h1 { font-size: 3.5rem; margin-bottom: 10px; }
-        p { font-size: 1.8rem; color: #666; }
-
-        /* The Bubble Box */
         .speech-bubble {
             background: #ffffff;
             border-radius: 12px;
@@ -46,39 +60,34 @@
             color: #333;
             border: 2px solid #000;
             display: inline-block;
-            max-width: 90%; /* Prevents the bubble from touching screen edges */
+            max-width: 400px;
         }
 
-        /* The Triangle Tail */
-        .speech-bubble::after {
+        /* Speech bubble tail */
+        .speech-bubble::after, .speech-bubble::before {
             content: '';
             position: absolute;
             bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
-            border-width: 15px 15px 0;
             border-style: solid;
-            border-color: #ffffff transparent transparent;
         }
-        
-        /* The Tail Outline */
+
+        .speech-bubble::after {
+            border-width: 15px 15px 0;
+            border-color: #ffffff transparent transparent;
+            z-index: 2;
+        }
+
         .speech-bubble::before {
-            content: '';
-            position: absolute;
             bottom: -18px;
-            left: 50%;
-            transform: translateX(-50%);
             border-width: 17px 17px 0;
-            border-style: solid;
             border-color: #000 transparent transparent;
+            z-index: 1;
         }
 
         .monkey-bottom {
-            width: 300px; 
-            max-width: 100%;
-            /* Removed absolute positioning. margin-top: auto anchors it to the bottom safely */
-            margin-top: auto; 
-            z-index: 10;
+            width: 300px;
         }
 
         .monkey-bottom img {
@@ -87,24 +96,68 @@
             display: block;
         }
 
-        /* Mobile scaling to ensure the giant text doesn't break small phones */
+        .banana-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .banana-button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            transition: transform 0.2s;
+        }
+
+        .banana-button:hover {
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        .banana-label {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #555;
+            margin-top: 10px;
+        }
+
         @media (max-width: 600px) {
             h1 { font-size: 2.5rem; }
             p { font-size: 1.2rem; }
             .speech-bubble { font-size: 1rem; }
+            .monkey-container { 
+                flex-direction: column; 
+                gap: 30px; 
+            }
+            .monkey-bottom { width: 200px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Server Down</h1>
-		
+    <div class="header-container">
+        <h1>503 - Server Down</h1>
+        <p>We're performing some maintenance. We'll be back shortly!</p>
     </div>
 
-    <div class="monkey-bottom">
-        <div class="speech-bubble">This primate can't even find his way home. Can you spare a banana? I've been lost for days!</div>
-        <img src="monkey.svg" alt="Monkey Mascot">
+    <div class="monkey-container">
+        <!-- Monkey Side -->
+        <div class="monkey-wrapper">
+            <div class="speech-bubble">
+                This primate can't even find his way home. Can you spare a banana? I've been lost for days!
+            </div>
+            <div class="monkey-bottom">
+                <img src="monkey.svg" alt="Monkey Mascot">
+            </div>
+        </div>
+        
+        <!-- Banana Side -->
+        <div class="banana-wrapper">
+            <button class="banana-button" onclick="window.location.reload();">
+                <img src="banana.svg" width="100" height="100" alt="Banana">
+                <div class="banana-label">Spare banana!</div>
+            </button>
+        </div>
     </div>
 
 </body>
