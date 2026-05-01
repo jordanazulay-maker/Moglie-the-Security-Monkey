@@ -121,6 +121,15 @@
             margin-top: 10px;
         }
 
+        .cloudflare-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+            z-index: 20;
+        }
+
         @media (max-width: 600px) {
             h1 { font-size: 2.5rem; }
             p { font-size: 1.2rem; }
@@ -158,6 +167,11 @@
                 <div class="banana-label">Spare banana!</div>
             </button>
         </div>
+    </div>
+
+    <!-- Cloudflare Diagnostic Box -->
+    <div class="cloudflare-container">
+        ::CLOUDFLARE_ERROR_500S_BOX::
     </div>
 
 </body>
