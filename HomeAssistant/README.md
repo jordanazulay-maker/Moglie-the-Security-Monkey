@@ -17,6 +17,6 @@ If it matters you can adjust the alignment in under layout.
 
 <br>
 
-<img src="monkey.svg" alt="Monkey Mascot" width="300">
+<img src="monkey.png" alt="Monkey Mascot" width="300">
 
 </div>
