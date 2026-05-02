@@ -1,7 +1,7 @@
-{% if is_state('INPUT_binary_sensor_wan_status', 'on') %}
-  Welcome Home!<br>We've checked all the trees,<br>no surprises here.
+{% if is_state('binary_sensor.be25_wan_status', 'on') %}
+  Welcome Home!<br>We've checked all the trees,<br>no surprises here.<br>Please tell me you<br>brought us more bananas!
 {% else %}
-  Moglie is stranded.<br>He can't find the<br>rest of the pack
+  Moglie is stranded.<br>He can't find the<br>rest of the pack!
 {% endif %}
 
 <img src="/local/monkey.png" width="100">
