@@ -1,7 +1,70 @@
-{% if is_state('binary_sensor.be25_wan_status', 'on') %}
-  Welcome Home!<br>We've checked all the trees,<br>no surprises here.<br>Please tell me you<br>brought us more bananas!
-{% else %}
-  Moglie is stranded.<br>He can't find the<br>rest of the pack!
-{% endif %}
+button_card_templates:
+  monkey_status_card:
+    show_icon: false
+    show_name: false
+    show_state: false
 
-<img src="/local/monkey.png" width="100">
+    tap_action:
+      action: navigate
+      navigation_path: >
+        [[[ return `/history?entity_id=${variables.entity}`; ]]]
+
+    custom_fields:
+      content: >
+        [[[
+          const state = states[variables.entity].state;
+
+          if (state === 'on') {
+            return `
+              <div class="text">
+                Welcome Home!<br>
+                We've checked all the trees,<br>
+                no surprises here.<br>
+                Please tell me you<br>
+                brought us more bananas!
+              </div>
+              <div class="img">
+                <img src="/local/monkey.png">
+              </div>
+            `;
+          } else {
+            return `
+              <div class="text">
+                Moglie is stranded.<br>
+                He can't find the<br>
+                rest of the pack!
+              </div>
+              <div class="img">
+                <img src="/local/monkey.png">
+              </div>
+            `;
+          }
+        ]]]
+
+    styles:
+      card:
+        - padding: 16px
+        - border-radius: 16px
+        - text-align: center
+        - cursor: pointer
+        - transition: all 0.2s ease
+      custom_fields:
+        content:
+          - display: flex
+          - flex-direction: column
+          - align-items: center
+          - justify-content: center
+      grid:
+        - grid-template-areas: '"content"'
+
+    extra_styles: |
+      .text {
+        line-height: 1.4;
+        margin-bottom: 12px;
+      }
+      .img img {
+        width: 100px;
+      }
+      ha-card:hover {
+        background: rgba(var(--rgb-primary-text-color), 0.05);
+      }
