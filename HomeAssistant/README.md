@@ -10,7 +10,7 @@ If it matters you can adjust the alignment in under layout.
 <table>
   <tr>
     <td align="center">
-      <b>Hi there!</b><br>I'm Moglie. The security primate!</b><br>I am designed to help protect</b><br>most Cloudflare websites.</b><br>This primate is known to be</b><br> weak for a banana though...</b>
+      <b>You can put this primate</b><br>right on your Home Assistant dashboard!</b><br>I can let you know if</b><br></b><br>Home Assistant loses connection.</b>
     </td>
   </tr>
 </table>
