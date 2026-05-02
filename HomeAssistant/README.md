@@ -20,7 +20,7 @@ If you don't already have a <b>www</b> folder, create it manually.<br><br>
 
 Replace <b>INPUT</b> in the card template with your WAN status entity (for example: <code>binary_sensor.be25_wan_status</code>).<br><br>
 
-Finally, go to your Home Assistant dashboard, add a <b>manual card</b>, and paste the provided code.
+Finally, go to your Home Assistant dashboard, add a <b>button card</b>, and paste the provided code.
 <br><br>
 
 <table style="margin-left: auto; margin-right: auto; border-collapse: collapse;">
