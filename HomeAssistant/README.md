@@ -21,6 +21,6 @@ If it matters, you can adjust the alignment under layout.
 
 <br>
 
-<img src="/local/monkey.svg" alt="Monkey Mascot" width="300" style="display: block; margin-left: auto; margin-right: auto;">
+<img src="monkey.png" alt="Monkey Mascot" width="300" style="display: block; margin-left: auto; margin-right: auto;">
 
 </div>
