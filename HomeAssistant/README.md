@@ -10,7 +10,7 @@ If it matters you can adjust the alignment in under layout.
 <table>
   <tr>
     <td align="center">
-      <b>You can put this primate</b><br>right on your Home Assistant dashboard!</b><br>I can let you know if</b><br></b><br>Home Assistant loses connection.</b>
+      <b>You can put this primate right</b><br>on your Home Assistant dashboard!</b><br>I can let you know if</b><br>Home Assistant loses connection.</b>
     </td>
   </tr>
 </table>
